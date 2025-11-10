@@ -77,10 +77,6 @@ você deseja criar.
         </band>
     </detail>
 </jasperReport>
-```
-> ❌ Atualmente, a aplicação **não suporta múltiplas queries** dentro de um único Report Query.
-
----
 
 ## API - Info
 
