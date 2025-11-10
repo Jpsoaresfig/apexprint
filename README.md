@@ -77,7 +77,7 @@ você deseja criar.
         </band>
     </detail>
 </jasperReport>
-
+---
 ## API - Info
 
 A aplicação é feita com **Spring Boot** e expõe um endpoint para receber o `templateFile` (.jrxml) e o `xmlData`.
