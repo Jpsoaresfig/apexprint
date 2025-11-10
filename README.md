@@ -71,7 +71,7 @@ você deseja criar.
 select TNAME,TABTYPE,CLUSTERID from tab 
 ```
 
-## Exemplo de xmlData
+## Exemplo de Report Layout xmlData
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
