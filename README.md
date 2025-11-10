@@ -65,6 +65,11 @@ Para gerar o relatório via botão no Apex:
 você deseja criar.
 
 ---
+## Exemplo de Query
+
+```query
+select TNAME,TABTYPE,CLUSTERID from tab 
+```
 
 ## Exemplo de xmlData
 
