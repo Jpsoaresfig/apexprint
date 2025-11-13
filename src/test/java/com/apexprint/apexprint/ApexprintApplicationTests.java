@@ -1,10 +1,10 @@
-package com.middlwareserver.serverreport;
+package com.apexprint.apexprint;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ServerreportApplicationTests {
+class ApexprintApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -127,22 +127,27 @@
         <div class="section-title">Desenvolvedores</div>
         <div class="developers">
             <div class="dev">
-                <strong>Tobias Freire</strong><br/>
+                <strong>Tobias Freire - Desenvolvedor de Software</strong><br/>
                 <small>Email: <a href="mailto:tobiasfreire005@gmail.com">tobiasfreire005@gmail.com</a></small>
                 <small>LinkedIn: <a href="https://www.linkedin.com/in/tobias-freire" target="_blank" rel="noopener">/in/tobias-freire</a></small>
             </div>
 
             <div class="dev">
-                <strong>Vinícius Soares</strong><br/>
+                <strong>Vinícius Soares - Arquiteto de Software</strong><br/>
                 <small>Email: <a href="mailto:vinisoares15@gmail.com">vinisoares15@gmail.com</a></small>
                 <small>LinkedIn: <a href="https://www.linkedin.com/in/vinicius-sf" target="_blank" rel="noopener">/in/vinicius-sf</a></small>
+            </div>
+                        <div class="dev">
+                <strong>João Pedro Soares - Desenvolvedor de Software</strong><br/>
+                <small>Email: <a href="mailto:js281983@gmail.com">js281983@gmail.com</a></small>
+                <small>LinkedIn: <a href="https://www.linkedin.com/in/joaopedrosoaresfigueiredo" target="_blank" rel="noopener">/in/joaopedrosoaresfigueiredo</a></small>
             </div>
         </div>
 
         <div class="section-title">Oracle APEX — Instruções Rápidas</div>
         <ul>
-            <li>Registre um <strong>Remote Server</strong> no APEX WorkSpace: <em>WorkSpace Utilities &gt; Remote Servers</em> com endpoint <code>/api/apex/generatePdfFromApex</code></li>
-            <li>Para testes locais, use o <strong>ngrok</strong> e configure a URL: <code>https://&lt;ngrok-url&gt;/api/apex/generatePdfFromApex</code></li>
+            <li>Registre um <strong>Remote Server</strong> no APEX WorkSpace: <em>WorkSpace Utilities &gt; Remote Servers</em> com endpoint <code>/report/generate</code></li>
+            <li>Para testes locais, use o <strong>ngrok</strong> e configure a URL: <code>https://&lt;ngrok-url&gt;/report/generate</code></li>
         </ul>
 
         <div class="section-title">Criando a Ação Dinâmica</div>
@@ -180,8 +185,7 @@
         </ul>
 
         <div class="section-title">Controller / Endpoints</div>
-        <p><strong>Base:</strong> <code>/api/jasper</code></p>
-        <p><strong>Rota:</strong> <code>/generatePdfFromJasper</code> — multipart/form-data, retorna PDF.</p>
+        <p><strong>Rota:</strong> <code>report/generate</code> — multipart/form-data, retorna PDF.</p>
 
         <div class="section-title">Swagger</div>
         <p><a href="http://localhost:8080/swagger-ui/index.html" target="_blank" rel="noopener">http://localhost:8080/swagger-ui/index.html</a></p>
@@ -191,7 +195,7 @@
         <pre class="example">
 mvn spring-boot:run
 ngrok http 8080
-https://&lt;ngrok-url&gt;/api/apex/generatePdfFromApex
+https://&lt;ngrok-url&gt;/report/generate
         </pre>
 
         <h3>Forma 2: Docker</h3>

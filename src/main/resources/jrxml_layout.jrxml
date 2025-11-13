@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.5.final using JasperReports Library version 6.21.5-74d586df47b25dbd05bd0957999819196e59934a  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="jasper_apex_agenda" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="agendapmjp"/>
+
+	<field name="NM_AGENDA" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="NM_AGENDA"/>
+		<fieldDescription><![CDATA[NM_AGENDA]]></fieldDescription>
+	</field>
+	<field name="DT_INICIO" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="DT_INICIO"/>
+		<fieldDescription><![CDATA[DT_INICIO]]></fieldDescription>
+	</field>
+	<field name="DT_FIM" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="DT_FIM"/>
+		<fieldDescription><![CDATA[DT_FIM]]></fieldDescription>
+	</field>
+	<field name="DS_STATUS" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="DS_STATUS"/>
+		<fieldDescription><![CDATA[DS_STATUS]]></fieldDescription>
+	</field>
+	<field name="FK_SECRETARIA" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="FK_SECRETARIA"/>
+		<fieldDescription><![CDATA[FK_SECRETARIA]]></fieldDescription>
+	</field>
+	<field name="FK_USER_CREATE" class="java.lang.Long">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="FK_USER_CREATE"/>
+		<fieldDescription><![CDATA[FK_USER_CREATE]]></fieldDescription>
+	</field>
+	<field name="DT_CREATE" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="DT_CREATE"/>
+		<fieldDescription><![CDATA[DT_CREATE]]></fieldDescription>
+	</field>
+	<field name="FL_LINK_EXTRA" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="FL_LINK_EXTRA"/>
+		<fieldDescription><![CDATA[FL_LINK_EXTRA]]></fieldDescription>
+	</field>
+	<field name="TP_PARTICIPANTE" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="TP_PARTICIPANTE"/>
+		<fieldDescription><![CDATA[TP_PARTICIPANTE]]></fieldDescription>
+	</field>
+	<field name="NM_PARTICIPANTE" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="NM_PARTICIPANTE"/>
+		<fieldDescription><![CDATA[NM_PARTICIPANTE]]></fieldDescription>
+	</field>
+	<field name="NM_EMAIL" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="NM_EMAIL"/>
+		<fieldDescription><![CDATA[NM_EMAIL]]></fieldDescription>
+	</field>
+	<field name="DS_PARTICIPANTE" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="DS_PARTICIPANTE"/>
+		<fieldDescription><![CDATA[DS_PARTICIPANTE]]></fieldDescription>
+	</field>
+	<field name="NU_TELEFONE" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="NU_TELEFONE"/>
+		<fieldDescription><![CDATA[NU_TELEFONE]]></fieldDescription>
+	</field>
+	<field name="ID_AGENDA" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="ID_AGENDA"/>
+		<fieldDescription><![CDATA[ID_AGENDA]]></fieldDescription>
+	</field>
+	<field name="NM_SETOR" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="NM_SETOR"/>
+		<fieldDescription><![CDATA[NM_SETOR]]></fieldDescription>
+	</field>
+	<field name="DS_LOCAL1" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="DS_LOCAL1"/>
+		<fieldDescription><![CDATA[DS_LOCAL1]]></fieldDescription>
+	</field>
+	<field name="NU_CANDIDATO" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="NU_CANDIDATO"/>
+		<fieldDescription><![CDATA[NU_CANDIDATO]]></fieldDescription>
+	</field>
+	<field name="NM_CARGO" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="NM_CARGO"/>
+		<fieldDescription><![CDATA[NM_CARGO]]></fieldDescription>
+	</field>
+	<field name="DS_SITUACAO" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="DS_SITUACAO"/>
+		<fieldDescription><![CDATA[DS_SITUACAO]]></fieldDescription>
+	</field>
+	<field name="NU_QTD_VOTOS_COMPUTADOS" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="NU_QTD_VOTOS_COMPUTADOS"/>
+		<fieldDescription><![CDATA[NU_QTD_VOTOS_COMPUTADOS]]></fieldDescription>
+	</field>
+	<field name="NM_PARTIDO" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="NM_PARTIDO"/>
+		<fieldDescription><![CDATA[NM_PARTIDO]]></fieldDescription>
+	</field>
+	<group name="NM_AGENDA">
+		<groupExpression><![CDATA[$F{NM_AGENDA}]]></groupExpression>
+	</group>
+	<group name="DT_INICIO">
+		<groupExpression><![CDATA[$F{DT_INICIO}]]></groupExpression>
+	</group>
+	<group name="DT_FIM">
+		<groupExpression><![CDATA[$F{DT_FIM}]]></groupExpression>
+	</group>
+	<group name="DS_STATUS">
+		<groupExpression><![CDATA[$F{DS_STATUS}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="202" height="30" uuid="5f54da81-c903-4fad-a44b-f798589e9bfa"/>
+				<textFieldExpression><![CDATA[$F{NM_AGENDA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="202" y="0" width="200" height="30" uuid="6d49799b-dd7f-4950-bf40-e98c2ac7412f"/>
+				<textFieldExpression><![CDATA[$F{DT_INICIO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="402" y="0" width="200" height="30" uuid="d60f591c-230c-4e9d-ae69-7c1d740ab3e1"/>
+				<textFieldExpression><![CDATA[$F{DT_FIM}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="602" y="0" width="200" height="30" uuid="5e344806-d4e5-4afb-9316-28375fb19a72"/>
+				<textFieldExpression><![CDATA[$F{DS_STATUS}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="268" height="30" uuid="0324f243-a89d-4e32-9208-ee900ab7db8a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fd9a0e0f-22df-49cc-bd70-e5dd7ddbefec"/>
+				</reportElement>
+				<text><![CDATA[NM_PARTICIPANTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="268" y="0" width="267" height="30" uuid="b4d100d3-b9d8-4638-a811-aa9ac21ff641">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7849ff02-d43a-481a-9d33-563a47b72aa3"/>
+				</reportElement>
+				<text><![CDATA[NM_EMAIL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="535" y="0" width="267" height="30" uuid="3e425acd-6a4f-46d7-9579-9f105f8a1ca7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5f547363-355f-4d45-b371-259ca691c6bb"/>
+				</reportElement>
+				<text><![CDATA[NU_TELEFONE]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="268" height="30" uuid="c470f535-658a-46af-bc15-568fd5e89e97">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fd9a0e0f-22df-49cc-bd70-e5dd7ddbefec"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{NM_PARTICIPANTE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="268" y="0" width="267" height="30" uuid="715e1042-efbd-44ca-ae8f-f8df906d3756">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7849ff02-d43a-481a-9d33-563a47b72aa3"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{NM_EMAIL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="535" y="0" width="267" height="30" uuid="0dfa7932-576c-45e0-9829-4dfc0577f13b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5f547363-355f-4d45-b371-259ca691c6bb"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{NU_TELEFONE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

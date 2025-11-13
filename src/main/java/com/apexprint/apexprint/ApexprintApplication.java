@@ -1,13 +1,13 @@
-package com.middlwareserver.serverreport;
+package com.apexprint.apexprint;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ServerreportApplication {
+public class ApexprintApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ServerreportApplication.class, args);
+		SpringApplication.run(ApexprintApplication.class, args);
 	}
 
 }
