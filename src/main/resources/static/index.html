@@ -1,164 +1,229 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Custom Remote Print Server For Oracle APEX</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;600;700&family=Catamaran:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;600;700&family=Catamaran:wght@400;500;600&display=swap"
+        rel="stylesheet" />
 
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            background:#990d0d;
-            font-family: "Catamaran", sans-serif;
-            color:#333;
-            min-height:100vh;
-            padding:1rem;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
-        .logo-container { position: fixed; top: 1rem; left: 1rem; z-index: 20; }
-        .logo { width:140px; height:auto; }
+        body {
+            background: #990d0d;
+            font-family: "Catamaran", sans-serif;
+            color: #333;
+            min-height: 100vh;
+            padding: 1rem;
+        }
 
-        .logo-container2 { position: fixed; top: 1rem; left: 1rem; z-index: 20; }
-        .logo2 { width:90px; height:auto; border-radius: 50px; }
- 
+        .logo-container {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            z-index: 20;
+        }
 
-               
+        .logo {
+            width: 140px;
+            height: auto;
+        }
+
+        .logo-container2 {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            z-index: 20;
+        }
+
+        .logo2 {
+            width: 90px;
+            height: auto;
+            border-radius: 50px;
+        }
+
+
+
 
         .wrap {
-            max-width:1100px;
+            max-width: 1100px;
             margin: 6rem auto 3rem;
         }
 
         .panel {
-            background:#f9f5f1;
-            border-radius:14px;
-            padding:28px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            background: #f9f5f1;
+            border-radius: 14px;
+            padding: 28px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
         }
 
         .hero {
-            padding:36px;
-            border-radius:12px;
+            padding: 36px;
+            border-radius: 12px;
         }
 
         h1 {
             font-family: "Cabin", sans-serif;
-            color:#990d0d;
-            font-size:32px;
-            margin-bottom:12px;
+            color: #990d0d;
+            font-size: 32px;
+            margin-bottom: 12px;
         }
 
         .subtitle {
-            color:#5c5050;
-            margin-bottom:18px;
-            line-height:1.5;
+            color: #5c5050;
+            margin-bottom: 18px;
+            line-height: 1.5;
         }
 
         .section-title {
             font-family: "Cabin", sans-serif;
-            font-size:18px;
-            color:#333;
-            margin-top:18px;
-            margin-bottom:10px;
+            font-size: 18px;
+            color: #333;
+            margin-top: 18px;
+            margin-bottom: 10px;
         }
 
-        p, li {
-            color:#5c5050;
-            line-height:1.5;
-            font-size:0.96rem;
+        p,
+        li {
+            color: #5c5050;
+            line-height: 1.5;
+            font-size: 0.96rem;
         }
 
-        ul { margin-left: 1rem; margin-bottom: 12px; }
+        ul {
+            margin-left: 1rem;
+            margin-bottom: 12px;
+        }
 
         .developers {
-            display:flex;
-            gap:10px;
-            flex-direction:column;
-            margin-bottom:10px;
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+            margin-bottom: 10px;
         }
 
         .dev {
-            background:#fffdfc;
-            border:1px solid #eee;
-            padding:10px;
-            border-radius:8px;
+            background: #fffdfc;
+            border: 1px solid #eee;
+            padding: 10px;
+            border-radius: 8px;
         }
 
-        .dev a { color:#990d0d; text-decoration:none; font-weight:600; }
-        .dev small { color:#7a6c6c; display:block; margin-top:6px; }
+        .dev a {
+            color: #990d0d;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .dev small {
+            color: #7a6c6c;
+            display: block;
+            margin-top: 6px;
+        }
 
         pre.example {
-            background:#0f1724; color:#dbeafe; padding:12px; border-radius:8px; overflow:auto; font-size:0.9rem;
+            background: #0f1724;
+            color: #dbeafe;
+            padding: 12px;
+            border-radius: 8px;
+            overflow: auto;
+            font-size: 0.9rem;
         }
 
         .footer {
-            text-align:center; color:#f2dcdc; margin-top:2rem; font-size:0.9rem;
+            text-align: center;
+            color: #f2dcdc;
+            margin-top: 2rem;
+            font-size: 0.9rem;
         }
     </style>
 </head>
+
 <body>
-<div class="logo-container">
-    <img class="logo" src="https://www.joaopessoa.pb.gov.br/wp-content/themes/joaopessoavinte/assets/images/logo-pmjp-white-horizontal.png" alt="Logo">
-    <img class="logo2" src="https://umti.joaopessoa.pb.gov.br/assets/images/AVATAR%20UMTI%20COLORIDO.jpeg" alt="Logo">
+    <div class="logo-container">
+        <img class="logo"
+            src="https://www.joaopessoa.pb.gov.br/wp-content/themes/joaopessoavinte/assets/images/logo-pmjp-white-horizontal.png"
+            alt="Logo">
+        <img class="logo2" src="https://umti.joaopessoa.pb.gov.br/assets/images/AVATAR%20UMTI%20COLORIDO.jpeg"
+            alt="Logo">
 
-</div>
+    </div>
 
-<main class="wrap">
-    <section class="panel hero">
-        <h1>Custom Remote Print Server For Oracle APEX</h1>
-        <p class="subtitle">
-            API que recebe o <strong>Report Query</strong> gerado pelo Oracle APEX (dados em XML) e retorna um relatório PDF
-            customizado e dinâmico a partir de um template JasperReports (.jrxml).
-        </p>
+    <!-- ABA — TESTE DA API -->
 
-        <div>
-            <div class="section-title">Como funciona</div>
-            <p>
-                O Oracle APEX gera <strong>Report Queries</strong> — resultados de queries convertidos para XML — e associa esses dados a um
-                Report Layout (que define o visual final). Essa API recebe esse XML e um template JRXML, renderiza o relatório com JasperReports
-                e retorna o PDF pronto para download ou visualização.
+
+
+    <main class="wrap">
+        <section class="panel hero">
+            <h1>Custom Remote Print Server For Oracle APEX</h1>
+            <p class="subtitle">
+                API que recebe o <strong>Report Query</strong> gerado pelo Oracle APEX (dados em XML) e retorna um
+                relatório PDF
+                customizado e dinâmico a partir de um template JasperReports (.jrxml).
             </p>
-        </div>
 
-        <div class="section-title">Desenvolvedores</div>
-        <div class="developers">
-            <div class="dev">
-                <strong>Tobias Freire - Desenvolvedor de Software</strong><br/>
-                <small>Email: <a href="mailto:tobiasfreire005@gmail.com">tobiasfreire005@gmail.com</a></small>
-                <small>LinkedIn: <a href="https://www.linkedin.com/in/tobias-freire" target="_blank" rel="noopener">/in/tobias-freire</a></small>
+            <div>
+                <div class="section-title">Como funciona</div>
+                <p>
+                    O Oracle APEX gera <strong>Report Queries</strong> — resultados de queries convertidos para XML — e
+                    associa esses dados a um
+                    Report Layout (que define o visual final). Essa API recebe esse XML e um template JRXML, renderiza o
+                    relatório com JasperReports
+                    e retorna o PDF pronto para download ou visualização.
+                </p>
             </div>
 
-            <div class="dev">
-                <strong>Vinícius Soares - Arquiteto de Software</strong><br/>
-                <small>Email: <a href="mailto:vinisoares15@gmail.com">vinisoares15@gmail.com</a></small>
-                <small>LinkedIn: <a href="https://www.linkedin.com/in/vinicius-sf" target="_blank" rel="noopener">/in/vinicius-sf</a></small>
+            <div class="section-title">Desenvolvedores</div>
+            <div class="developers">
+                <div class="dev">
+                    <strong>Tobias Freire - Desenvolvedor de Software</strong><br />
+                    <small>Email: <a href="mailto:tobiasfreire005@gmail.com">tobiasfreire005@gmail.com</a></small>
+                    <small>LinkedIn: <a href="https://www.linkedin.com/in/tobias-freire" target="_blank"
+                            rel="noopener">/in/tobias-freire</a></small>
+                </div>
+
+                <div class="dev">
+                    <strong>Vinícius Soares - Arquiteto de Software</strong><br />
+                    <small>Email: <a href="mailto:vinisoares15@gmail.com">vinisoares15@gmail.com</a></small>
+                    <small>LinkedIn: <a href="https://www.linkedin.com/in/vinicius-sf" target="_blank"
+                            rel="noopener">/in/vinicius-sf</a></small>
+                </div>
+                <div class="dev">
+                    <strong>João Pedro Soares - Desenvolvedor de Software</strong><br />
+                    <small>Email: <a href="mailto:js281983@gmail.com">js281983@gmail.com</a></small>
+                    <small>LinkedIn: <a href="https://www.linkedin.com/in/joaopedrosoaresfigueiredo" target="_blank"
+                            rel="noopener">/in/joaopedrosoaresfigueiredo</a></small>
+                </div>
             </div>
-                        <div class="dev">
-                <strong>João Pedro Soares - Desenvolvedor de Software</strong><br/>
-                <small>Email: <a href="mailto:js281983@gmail.com">js281983@gmail.com</a></small>
-                <small>LinkedIn: <a href="https://www.linkedin.com/in/joaopedrosoaresfigueiredo" target="_blank" rel="noopener">/in/joaopedrosoaresfigueiredo</a></small>
-            </div>
-        </div>
 
-        <div class="section-title">Oracle APEX — Instruções Rápidas</div>
-        <ul>
-            <li>Registre um <strong>Remote Server</strong> no APEX WorkSpace: <em>WorkSpace Utilities &gt; Remote Servers</em> com endpoint <code>/report/generate</code></li>
-            <li>Para testes locais, use o <strong>ngrok</strong> e configure a URL: <code>https://&lt;ngrok-url&gt;/report/generate</code></li>
-        </ul>
+            <div class="section-title">Oracle APEX — Instruções Rápidas</div>
+            <ul>
+                <li>Registre um <strong>Remote Server</strong> no APEX WorkSpace: <em>WorkSpace Utilities &gt; Remote
+                        Servers</em> com endpoint <code>/report/generate</code></li>
+                <li>Para testes locais, use o <strong>ngrok</strong> e configure a URL:
+                    <code>https://&lt;ngrok-url&gt;/report/generate</code>
+                </li>
+            </ul>
 
-        <div class="section-title">Criando a Ação Dinâmica</div>
-        <ol>
-            <li>Crie um botão na página (ex: "Gerar PDF")</li>
-            <li>Adicione uma Ação Dinâmica: tipo <strong>Print Report</strong></li>
-            <li>Em Settings &gt; Report Query, selecione a Report Query desejada</li>
-        </ol>
+            <div class="section-title">Criando a Ação Dinâmica</div>
+            <ol>
+                <li>Crie um botão na página (ex: "Gerar PDF")</li>
+                <li>Adicione uma Ação Dinâmica: tipo <strong>Print Report</strong></li>
+                <li>Em Settings &gt; Report Query, selecione a Report Query desejada</li>
+            </ol>
 
-        <div class="section-title">Exemplo de <code>xmlData</code></div>
-        <pre class="example">
+            <div class="section-title">Exemplo de <code>xmlData</code></div>
+            <pre class="example">
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;!DOCTYPE jasperReport PUBLIC "-//JasperReports//DTD Report Design//EN"
  "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd"&gt;
@@ -175,47 +240,160 @@
 &lt;/jasperReport&gt;
         </pre>
 
-        <div class="section-title">API — Info técnica</div>
-        <p>
-            A aplicação é um serviço em <strong>Spring Boot</strong> que expõe endpoints para receber:
-        </p>
-        <ul>
-            <li><code>templateFile</code> (.jrxml)</li>
-            <li><code>xmlData</code> (XML do Report Query)</li>
-        </ul>
+            <div class="section-title">API — Info técnica</div>
+            <p>
+                A aplicação é um serviço em <strong>Spring Boot</strong> que expõe endpoints para receber:
+            </p>
+            <ul>
+                <li><code>templateFile</code> (.jrxml)</li>
+                <li><code>xmlData</code> (XML do Report Query)</li>
+            </ul>
 
-        <div class="section-title">Controller / Endpoints</div>
-        <p><strong>Rota:</strong> <code>report/generate</code> — multipart/form-data, retorna PDF.</p>
+            <div class="section-title">Controller / Endpoints</div>
+            <p><strong>Rota:</strong> <code>report/generate</code> — multipart/form-data, retorna PDF.</p>
 
-        <div class="section-title">Swagger</div>
-        <p><a href="http://localhost:8080/swagger-ui/index.html" target="_blank" rel="noopener">http://localhost:8080/swagger-ui/index.html</a></p>
+            <div class="section-title">Swagger</div>
+            <p><a href="http://localhost:8080/swagger-ui/index.html" target="_blank"
+                    rel="noopener">http://localhost:8080/swagger-ui/index.html</a></p>
 
-        <div class="section-title">Passo a passo — Execução</div>
-        <h3>Forma 1: Local (com ngrok)</h3>
-        <pre class="example">
+            <div class="section-title">Passo a passo — Execução</div>
+            <h3>Forma 1: Local (com ngrok)</h3>
+            <pre class="example">
 mvn spring-boot:run
 ngrok http 8080
 https://&lt;ngrok-url&gt;/report/generate
         </pre>
 
-        <h3>Forma 2: Docker</h3>
-        <pre class="example">
+            <h3>Forma 2: Docker</h3>
+            <pre class="example">
 docker build -t printserver .
 docker run -p 8080:8080 printserver
         </pre>
 
-        <div class="section-title">TODO / Roadmap</div>
-        <ul>
-            <li>Permitir exportação para XLSX, DOCX etc.</li>
-            <li>Suporte a múltiplas queries</li>
-            <li>Autenticação via token</li>
-            <li>Página de visualização prévia</li>
-        </ul>
-    </section>
-</main>
+            <div class="section-title">TODO / Roadmap</div>
+            <ul>
+                <li>Permitir exportação para XLSX, DOCX etc.</li>
+                <li>Suporte a múltiplas queries</li>
+                <li>Autenticação via token</li>
+                <li>Página de visualização prévia</li>
+            </ul>
 
-<footer class="footer">
-    © 2025 Custom Remote Print Server For Oracle APEX — Desenvolvido por Tobias Freire &amp; Vinícius Soares
-</footer>
+            <section class="panel" style="margin-top:2rem;">
+                <h1>Testar API</h1>
+                <p class="subtitle">Envie um JRXML + XML para testar o endpoint <code>/report/generate</code></p>
+
+                <!-- MENU DE ABAS -->
+                <div class="tab-menu" style="margin-bottom:1rem; display:flex; gap:10px;">
+                    <button class="tab-btn active" onclick="openTab('formTab')"
+                        style="padding:10px 18px; border:none; border-radius:8px; background:#990d0d; color:white; cursor:pointer;">
+                        Formulário
+                    </button>
+
+                    <button class="tab-btn" onclick="openTab('curlTab')"
+                        style="padding:10px 18px; border:none; border-radius:8px; background:#ddd; cursor:pointer;">
+                        Exemplo CURL
+                    </button>
+                </div>
+
+                <!-- TAB 1 — FORMULÁRIO -->
+                <div id="formTab" class="tab-content" style="display:block;">
+                    <label><strong>JRXML (templateFile)</strong></label>
+                    <textarea id="jrxmlInput" style="width:100%; height:150px; margin:8px 0; padding:10px;"></textarea>
+
+                    <label><strong>XML Data (xmlData)</strong></label>
+                    <textarea id="xmlInput" style="width:100%; height:150px; margin:8px 0; padding:10px;"></textarea>
+
+                    <label><strong>Formato</strong></label>
+                    <select id="formatInput" style="padding:8px; width:200px; margin-bottom:12px;">
+                        <option value="pdf">PDF</option>
+                        <option value="docx">DOCX</option>
+                        <option value="xlsx">XLSX</option>
+                    </select>
+
+                    <br><br>
+
+                    <button onclick="sendReportRequest()"
+                        style="padding:12px 20px; border:none; background:#990d0d; color:white; border-radius:8px; cursor:pointer;">
+                        Enviar para API
+                    </button>
+
+                    <p id="status" style="margin-top:1rem; color:#444;"></p>
+                </div>
+
+                <!-- TAB 2 — CURL -->
+                <div id="curlTab" class="tab-content" style="display:none;">
+                    <pre class="example">
+curl -X POST https://seu-servidor/report/generate \
+  -F "templateFile=@template.jrxml" \
+  -F "xmlData=@data.xml" \
+  -F "format=pdf"
+        </pre>
+                </div>
+            </section>
+
+            <script>
+                function openTab(tabId) {
+                    document.querySelectorAll(".tab-content").forEach(el => el.style.display = "none");
+                    document.querySelectorAll(".tab-btn").forEach(el => el.classList.remove("active"));
+
+                    document.getElementById(tabId).style.display = "block";
+                    event.target.classList.add("active");
+                }
+
+                async function sendReportRequest() {
+                    const jrxml = document.getElementById("jrxmlInput").value;
+                    const xml = document.getElementById("xmlInput").value;
+                    const format = document.getElementById("formatInput").value;
+                    const statusEl = document.getElementById("status");
+
+                    if (!jrxml || !xml) {
+                        statusEl.textContent = "Por favor, preencha o JRXML e o XML Data.";
+                        return;
+                    }
+
+                    const formData = new FormData();
+                    formData.append("templateFile", jrxml);
+                    formData.append("xmlData", xml);
+                    formData.append("format", format);
+
+                    statusEl.textContent = "Enviando...";
+
+                    try {
+                        const response = await fetch("/report/generate", {
+                            method: "POST",
+                            body: formData
+                        });
+
+                        if (!response.ok) {
+                            statusEl.textContent = "Erro ao gerar relatório.";
+                            return;
+                        }
+
+                        const blob = await response.blob();
+                        const url = window.URL.createObjectURL(blob);
+
+                        const a = document.createElement("a");
+                        a.href = url;
+                        a.download = "relatorio." + format;
+                        document.body.appendChild(a);
+                        a.click();
+                        a.remove();
+
+                        statusEl.textContent = "Relatório baixado com sucesso!";
+                    } catch (err) {
+                        statusEl.textContent = "Erro: " + err.message;
+                    }
+                }
+            </script>
+
+
+
+        </section>
+    </main>
+
+    <footer class="footer">
+        © 2025 Custom Remote Print Server For Oracle APEX — Desenvolvido por Tobias Freire &amp; Vinícius Soares
+    </footer>
 </body>
+
 </html>
